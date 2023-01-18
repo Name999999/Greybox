@@ -33,4 +33,10 @@ public class MenuScene : MonoBehaviour
     {
         Debug.Log("Setting Button clicked");
     }
+
+    public void OnQuitClick()
+    {
+        Debug.Log("Quit Button clicked");
+        Application.Quit();
+    }
 }
