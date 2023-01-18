@@ -22,39 +22,101 @@ public class Inventory : MonoBehaviour
     public Color unselectedColour;
     public Color selectedColour;
 
-    public Image border1; // Image assignment for HUD item borders
-    public Image border2;
-    public Image border3;
-    public Image border4;
-    public Image border5;       
-    public Image border6;
-    public Image border7;
-    public Image border8;
-    public Image border9;
-    public Image border10;
+    public Image[] borderImages;
+    public Image[] invImages;
 
-    public Image itemImage1; // Image assignment for actual object sprites
-    public Image itemImage2;
-    public Image itemImage3;
-    public Image itemImage4;
-    public Image itemImage5;    
-    public Image itemImage6;
-    public Image itemImage7;
-    public Image itemImage8;
-    public Image itemImage9;
-    public Image itemImage10;
-
-
+    public int lastSlotActivated;
+    public int selectedItem;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        DeactivateUISlots();
+        lastSlotActivated = -1;
+        selectedItem = -1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // List of inventory keys - Currently just changes what is highlighted and updated an int called 'selectedItem' which you will need to associate with objects.
+        if (Input.GetKeyDown("1") && hasItem1)
+        {
+            UpdateUI(0, selectedItem);
+            selectedItem = 0;
+        }
+        if (Input.GetKeyDown("2") && hasItem2)
+        {
+            UpdateUI(1, selectedItem);
+            selectedItem = 1;
+        }
+        if (Input.GetKeyDown("3") && hasItem3)
+        {
+            UpdateUI(2, selectedItem);
+            selectedItem = 2;
+        }
+        if (Input.GetKeyDown("4") && hasItem4)
+        {
+            UpdateUI(3, selectedItem);
+            selectedItem = 3;
+        }
+        if (Input.GetKeyDown("5") && hasItem5)
+        {
+            UpdateUI(4, selectedItem);
+            selectedItem = 4;
+        }
+        if (Input.GetKeyDown("6") && hasItem6)
+        {
+            UpdateUI(5, selectedItem);
+            selectedItem = 5;
+        }
+        if (Input.GetKeyDown("7") && hasItem7)
+        {
+            UpdateUI(6, selectedItem);
+            selectedItem = 6;
+        }
+        if (Input.GetKeyDown("8") && hasItem8)
+        {
+            UpdateUI(7, selectedItem);
+            selectedItem = 7;
+        }
+        if (Input.GetKeyDown("9") && hasItem9)
+        {
+            UpdateUI(8, selectedItem);
+            selectedItem = 8;
+        }
+        if (Input.GetKeyDown("0") && hasItem10)
+        {
+            UpdateUI(9, selectedItem);
+            selectedItem = 9;
+        }
+    }
+
+    void DeactivateUISlots()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            invImages[i].gameObject.SetActive(false);
+        }
+    }
+    
+    public void GetItemUI(int slot)
+    {
+        invImages[slot].gameObject.SetActive(true);
+        Debug.Log("Item " + slot + " acquired");
+    }
+
+
+    public void UpdateUI(int slot, int oldSlot)
+    {
+        borderImages[slot].GetComponent<Image>().color = selectedColour;
+        if (selectedItem > -1)
+        {
+            borderImages[oldSlot].GetComponent<Image>().color = unselectedColour;
+        }
+
+        selectedItem = slot;
+
+
     }
 }
