@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
 
-    public float speed = 10.0f;
-    public float jumpForce = 300.0f;
+    public float speed;
+    public float jumpForce;
     private float translation;
     private float straife;
 
