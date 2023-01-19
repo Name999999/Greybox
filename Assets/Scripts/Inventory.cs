@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 {
     // VARS
     public Canvas inventoryHUD;
+    public GameObject invManager;
 
     public bool hasItem1 = false; // Bools for seeing if an item is owned
     public bool hasItem2 = false;
@@ -18,6 +19,8 @@ public class Inventory : MonoBehaviour
     public bool hasItem8 = false;
     public bool hasItem9 = false;
     public bool hasItem10 = false;
+
+    public int itemCollectionIndex;
 
     public Color unselectedColour;
     public Color selectedColour;
@@ -34,6 +37,7 @@ public class Inventory : MonoBehaviour
         DeactivateUISlots();
         lastSlotActivated = -1;
         selectedItem = -1;
+        itemCollectionIndex = -1;
     }
 
     // Update is called once per frame
@@ -90,6 +94,65 @@ public class Inventory : MonoBehaviour
             UpdateUI(9, selectedItem);
             selectedItem = 9;
         }
+    }
+
+    public void GetsItem(int itemIndex)
+    {
+        itemCollectionIndex = itemIndex;
+        if (itemCollectionIndex == 0)
+        {
+            hasItem1 = true;
+            invManager.GetComponent<Inventory>().GetItemUI(0);
+
+        }
+        if (itemCollectionIndex == 1)
+        {
+            hasItem2 = true;
+            invManager.GetComponent<Inventory>().GetItemUI(1);
+
+        }
+        if (itemCollectionIndex == 2)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(2);
+            hasItem3 = true;
+        }
+        if (itemCollectionIndex == 3)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(3);
+            hasItem4 = true;
+        }
+        if (itemCollectionIndex == 4)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(4);
+            hasItem5 = true;
+        }
+        if (itemCollectionIndex == 5)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(5);
+            hasItem6 = true;
+        }
+        if (itemCollectionIndex == 6)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(6);
+            hasItem7 = true;
+        }
+        if (itemCollectionIndex == 7)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(7);
+            hasItem8 = true;
+        }
+        if (itemCollectionIndex == 8)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(8);
+            hasItem9 = true;
+        }
+        if (itemCollectionIndex == 9)
+        {
+            invManager.GetComponent<Inventory>().GetItemUI(9);
+            hasItem10 = true;
+        }
+
+
     }
 
     void DeactivateUISlots()
