@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
-public class Patrol2 : MonoBehaviour
+public class PatrolBackup : MonoBehaviour
 {
     public Transform[] points;
     int x = 0;
@@ -49,8 +49,9 @@ public class Patrol2 : MonoBehaviour
 
         float distance = Mathf.Sqrt(Mathf.Pow(gameObject.transform.position.x - characterController.transform.position.x, 2) + Mathf.Pow(gameObject.transform.position.y - characterController.transform.position.y, 2));
         print(distance);
-        if (distance <= 5)
+        if (distance <= 6)
         {
+
             print("within vicinity");
             agent.destination = characterController.transform.position;
             return;
@@ -70,3 +71,4 @@ public class Patrol2 : MonoBehaviour
         }
     }
 }
+
