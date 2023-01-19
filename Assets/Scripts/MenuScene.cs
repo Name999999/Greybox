@@ -32,11 +32,17 @@ public class MenuScene : MonoBehaviour
     public void OnSettingClick()
     {
         Debug.Log("Setting Button clicked");
+        SceneManager.LoadScene("Settings");
     }
 
     public void OnQuitClick()
     {
         Debug.Log("Quit Button clicked");
         Application.Quit();
+    }
+    public void OnBackClick()
+    {
+        Debug.Log("Back Button clicked");
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -18,17 +18,21 @@ public class MouseCamLook : MonoBehaviour
 
     float initialAngle;
 
+    public bool camActive;
+
     // Use this for initialization
     void Start()
     {
         character = this.transform.parent.gameObject;
         initialAngle = character.transform.localEulerAngles.y;
+        camActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         // md is mosue delta
+
         var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
         // the interpolated float result between the two float values
@@ -37,9 +41,12 @@ public class MouseCamLook : MonoBehaviour
         // incrementally add to the camera look
         mouseLook += smoothV;
 
-        // vector3.right means the x-axis
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        character.transform.localRotation = Quaternion.AngleAxis(initialAngle + mouseLook.x, Vector3.up);
+        if (camActive)
+        {
+            // vector3.right means the x-axis
+            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            character.transform.localRotation = Quaternion.AngleAxis(initialAngle + mouseLook.x, Vector3.up);
+        }
 
         //Debug.Log(mouseLook.x);
     }

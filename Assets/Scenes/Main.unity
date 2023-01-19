@@ -47136,6 +47136,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6691501075256581723, guid: 596fbe1df9c20e54e98397e3102b0cca, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 2074067400}
+    - target: {fileID: 6691501075256581723, guid: 596fbe1df9c20e54e98397e3102b0cca, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2074067398}
     - target: {fileID: 6691501075256581726, guid: 596fbe1df9c20e54e98397e3102b0cca, type: 3}
       propertyPath: m_Name
       value: MenuPaue
@@ -66311,6 +66319,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 221555286, guid: 752ebf3de0d632f4bae5701c3af1fb14, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2747980333281626449, guid: 752ebf3de0d632f4bae5701c3af1fb14, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -66430,6 +66442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   jumpForce: 1
+  controlActive: 0
 --- !u!114 &2074067402
 MonoBehaviour:
   m_ObjectHideFlags: 0
