@@ -49,7 +49,7 @@ public class Patrol2 : MonoBehaviour
 
         float distance = Mathf.Sqrt(Mathf.Pow(gameObject.transform.position.x - characterController.transform.position.x, 2) + Mathf.Pow(gameObject.transform.position.y - characterController.transform.position.y, 2));
         print(distance);
-        if (distance <= 5)
+        if (distance <= 3)
         {
             print("within vicinity");
             agent.destination = characterController.transform.position;
