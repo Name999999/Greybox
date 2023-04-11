@@ -518,9 +518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78adf406d97fac848baf9c6cd742e031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
-  smoothing: 2
-  character: {fileID: 0}
+  m_sensivity: 50
+  m_clampAngle: 90
+  m_playerObject: {fileID: 0}
+  m_camera: {fileID: 0}
+  camActive: 0
 --- !u!1 &7254705880471177506
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,3 +654,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpForce: 1
+  controlActive: 0
