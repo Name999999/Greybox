@@ -65637,10 +65637,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 990723eb0266ac14da2ecb1fc53e46d5, type: 2}
+    - target: {fileID: 5724029970827140553, guid: 752ebf3de0d632f4bae5701c3af1fb14, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5724029971167214414, guid: 752ebf3de0d632f4bae5701c3af1fb14, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 990723eb0266ac14da2ecb1fc53e46d5, type: 2}
+    - target: {fileID: 5724029971167214513, guid: 752ebf3de0d632f4bae5701c3af1fb14, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6110232074182298840, guid: 752ebf3de0d632f4bae5701c3af1fb14, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -65688,6 +65696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   jumpForce: 1
+  controlActive: 0
 --- !u!114 &2074067402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65700,9 +65709,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78adf406d97fac848baf9c6cd742e031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
-  smoothing: 2
-  character: {fileID: 0}
+  m_sensivity: 50
+  m_clampAngle: 90
+  m_playerObject: {fileID: 0}
+  m_camera: {fileID: 0}
+  camActive: 0
 --- !u!114 &2074067414
 MonoBehaviour:
   m_ObjectHideFlags: 0
