@@ -36,6 +36,11 @@ public class AudioTrigger : MonoBehaviour
             randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
             randomSound.Play();
         }
+
+        if (Input.GetKeyUp("w"))
+        {
+            randomSound.Stop();
+        }
     }
 }
 
