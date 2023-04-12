@@ -9,7 +9,7 @@ public class WeaponAttack : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
 
-    private float maxHealth = 300f;
+    private float maxHealth = 5000f;
     private float currentHealth;
 
     private void Start()
@@ -30,7 +30,7 @@ public class WeaponAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "AIFinalBoss")
+        if (other.CompareTag("Enemy"))
         {
             currentHealth -= 5f;
             UpdateHealthBar();
