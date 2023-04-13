@@ -12,6 +12,9 @@ public class AIFunctionFinalLevel : MonoBehaviour
 
     private float maxHealth = 300f;
     private float currentHealth;
+    public GameObject YouLoseCanvas;
+    public GameObject GameGUI;
+
 
     private void Start()
     {
@@ -20,12 +23,17 @@ public class AIFunctionFinalLevel : MonoBehaviour
             GetComponent<BoxCollider>().isTrigger = true;
         }
         currentHealth = maxHealth;
-        UpdateHealthBar();
+        UpdateHealthBarPlayer();
     }
 
     void Update()
     {
-
+        if (currentHealth <= 0)
+        {
+            YouLoseCanvas.SetActive(true);
+            Time.timeScale = 0f;
+            GameGUI.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,11 +41,11 @@ public class AIFunctionFinalLevel : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             currentHealth -= 5f;
-            UpdateHealthBar();
+            UpdateHealthBarPlayer();
         }
     }
 
-    private void UpdateHealthBar()
+    private void UpdateHealthBarPlayer()
     {
         healthBar.fillAmount = currentHealth / maxHealth;
     }

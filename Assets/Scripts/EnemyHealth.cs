@@ -4,24 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
-public class WeaponAttack : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
 
-    private float maxHealth = 300f;
+    private float maxHealth = 1000f;
     public float currentHealth;
     public GameObject YouWinCanvas;
     public GameObject GameGUI;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        if (!GetComponent<BoxCollider>().isTrigger)
-        {
-            GetComponent<BoxCollider>().isTrigger = true;
-        }
-        currentHealth = maxHealth;
-        UpdateHealthBarEnemy();
+
     }
 
     void Update()
@@ -34,19 +29,17 @@ public class WeaponAttack : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Weapons"))
         {
             currentHealth -= 5f;
             UpdateHealthBarEnemy();
         }
     }
 
-    private void UpdateHealthBarEnemy()
+    public void UpdateHealthBarEnemy()
     {
         healthBar.fillAmount = currentHealth / maxHealth;
     }
 }
- 
