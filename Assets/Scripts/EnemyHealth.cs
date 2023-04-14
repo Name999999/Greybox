@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
 
-    private float maxHealth = 1000f;
+    private float maxHealth = 3000f;
     public float currentHealth;
     public GameObject YouWinCanvas;
     public GameObject GameGUI;
@@ -24,7 +24,6 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             YouWinCanvas.SetActive(true);
-            Time.timeScale = 0f;
             GameGUI.SetActive(false);
         }
     }
