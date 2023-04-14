@@ -10,7 +10,7 @@ public class AIFunctionFinalLevel : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
 
-    private float maxHealth = 300f;
+    public float maxHealth = 500f;
     private float currentHealth;
     public GameObject YouLoseCanvas;
     public GameObject GameGUI;
@@ -31,7 +31,6 @@ public class AIFunctionFinalLevel : MonoBehaviour
         if (currentHealth <= 0)
         {
             YouLoseCanvas.SetActive(true);
-            Time.timeScale = 0f;
             GameGUI.SetActive(false);
         }
     }
