@@ -59,7 +59,7 @@ public class SwitchBehaviour : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(collider collision) 
+    private void OnTriggerEnter(Collider collision) 
     {
         if (collision.CompareTag("Player"))
         {
@@ -67,14 +67,8 @@ public class SwitchBehaviour : MonoBehaviour
 
             if (_isDoorOpenSwitch && !_doorBehaviour._isDoorOpen)
             {
-                _doorBehaviour._isDoorOpen = !_doorBehaviour._isDoorOpen
+                _doorBehaviour._isDoorOpen = !_doorBehaviour._isDoorOpen;
             }
-
-
-
-
-
-
         }    
     
     }
