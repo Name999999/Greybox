@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 public class ResetScene : MonoBehaviour
 {
 
-    private void Start()
+    public Animation anim;
+
+    void Start()
     {
         if (!GetComponent<BoxCollider>().isTrigger)
         {
             GetComponent<BoxCollider>().isTrigger = true;
         }
+        anim = GetComponent<Animation>();
     }
 
 
@@ -19,7 +22,14 @@ public class ResetScene : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(waiter());
+            IEnumerator waiter()
+            {
+                anim.Play("Dying");
+                yield return new WaitForSeconds(10.0f);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+           
         }
     }
 }
