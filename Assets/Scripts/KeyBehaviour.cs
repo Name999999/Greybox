@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class KeyBehaviour : MonoBehaviour
 {
-   
-    private void OnTriggerEnter(Collider collision)
+    [SerializeField] SwitchBehaviour _switchBehaviour;
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            _switchBehaviour.DoorLockedStatus();
             Destroy(gameObject);
         }
     }

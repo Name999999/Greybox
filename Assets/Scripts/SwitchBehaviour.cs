@@ -16,7 +16,8 @@ public class SwitchBehaviour : MonoBehaviour
     float _switchDelay = 0.2f;
     bool _isPressingSwitch = false;
 
-    // Start is called before the first frame update
+    bool _isDoorLocked = true; // Set door locked status
+
     void Awake()
     {
         _switchSizeY = transform.localScale.y / 2;
@@ -48,7 +49,6 @@ public class SwitchBehaviour : MonoBehaviour
 
     }
 
-
     void MoveSwitchUp()
     {
         if (transform.position != _switchUpPos)
@@ -58,22 +58,46 @@ public class SwitchBehaviour : MonoBehaviour
 
     }
 
-
-    private void OnTriggerEnter(Collider collision) 
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             _isPressingSwitch = !_isPressingSwitch;
 
-            if (_isDoorOpenSwitch && !_doorBehaviour._isDoorOpen)
+            if (!_isDoorLocked)
             {
-                _doorBehaviour._isDoorOpen = !_doorBehaviour._isDoorOpen;
+                if (_isDoorOpenSwitch && !_doorBehaviour._isDoorOpen)
+                {
+                    _doorBehaviour._isDoorOpen = !_doorBehaviour._isDoorOpen;
+                }
+                else if (_isDoorCloseSwitch && _doorBehaviour._isDoorOpen)
+                {
+                    _doorBehaviour._isDoorOpen = !_doorBehaviour._isDoorOpen;
+                }
             }
-        }    
-    
+            
+        }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player")) 
+        {
+            StartCoroutine(SwitchUpDelay(_switchDelay));        
+        }
+    }
+   
 
+    IEnumerator SwitchUpDelay(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        _isPressingSwitch = false;
+    }
+
+    public void DoorLockedStatus()
+    {
+        _isDoorLocked = !_isDoorLocked;
+    }
 
 
 
