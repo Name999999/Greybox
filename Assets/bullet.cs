@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float life = 3;
+
+    void Awake()
     {
-        
+        Destroy(gameObject, life);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
     }
 }
