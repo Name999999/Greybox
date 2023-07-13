@@ -18,7 +18,7 @@ public class RestartFinalLevel : MonoBehaviour
     {
         if (YouLoseCanvas && Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Boss");
         }
     }
 }
