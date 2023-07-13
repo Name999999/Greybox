@@ -20,7 +20,7 @@ public class KillTrigger : MonoBehaviour
             animator.SetTrigger(deathAnimationTrigger);
 
             // Load retry scene after a delay
-            Invoke("LoadRetryScene", 2f);
+            Invoke("LoadRetryScene", 0.25f);
         }
     }
 
