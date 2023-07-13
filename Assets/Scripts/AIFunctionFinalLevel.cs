@@ -36,9 +36,9 @@ public class AIFunctionFinalLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Enemy"))
         {
-            currentHealth -= 5f;
+            currentHealth -= 50;
             UpdateHealthBarPlayer();
         }
     }

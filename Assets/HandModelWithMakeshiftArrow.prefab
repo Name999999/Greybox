@@ -1643,12 +1643,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621322207153203742}
-  - component: {fileID: 621322207153203744}
-  - component: {fileID: 621322207153203747}
-  - component: {fileID: 621322207153203746}
   - component: {fileID: 621322207153203741}
   - component: {fileID: 621322207153203740}
-  - component: {fileID: 621322207153203743}
+  - component: {fileID: 8508792330851453793}
   m_Layer: 0
   m_Name: HandModelWithMakeshiftArrow
   m_TagString: Untagged
@@ -1677,47 +1674,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -84.264, y: -124.774, z: 0}
---- !u!114 &621322207153203744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621322207153203737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2597965886382941bba96afea641408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HandWithPole: {fileID: 621322205430100747}
-  Pole: {fileID: 0}
---- !u!114 &621322207153203747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621322207153203737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18e21bcb440a9540a3c9b09aa9fab33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HandWithPole: {fileID: 0}
-  Pole: {fileID: 0}
---- !u!114 &621322207153203746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621322207153203737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c93ee4352e79954c93fb0b33b922080, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToMove: {fileID: 621322207153203737}
 --- !u!95 &621322207153203741
 Animator:
   serializedVersion: 4
@@ -1780,19 +1736,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &621322207153203743
-MonoBehaviour:
+--- !u!65 &8508792330851453793
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621322207153203737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0faaa1ae7ba6eea4aad43f22604a2666, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HandWithArrow: {fileID: 621322207153203737}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &621322207311403899
 GameObject:
   m_ObjectHideFlags: 0

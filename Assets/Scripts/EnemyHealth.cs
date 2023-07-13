@@ -29,10 +29,14 @@ public class EnemyHealth : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Weapons"))
+        if (other.CompareTag("Bow"))
         {
-            currentHealth -= 5f;
+            currentHealth -= 100f;
             UpdateHealthBarEnemy();
+        }
+        if (other.CompareTag("Pole"))
+        {
+            currentHealth -= 300f;
         }
     }
 

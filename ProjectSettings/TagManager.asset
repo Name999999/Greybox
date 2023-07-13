@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Weapons
   - HealthBar
+  - Bow
+  - Pole
   layers:
   - Default
   - TransparentFX
