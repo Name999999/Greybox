@@ -23,8 +23,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            YouWinCanvas.SetActive(true);
-            GameGUI.SetActive(false);
+            SceneManager.LoadScene("BossCutsceneScene2");
         }
     }
 

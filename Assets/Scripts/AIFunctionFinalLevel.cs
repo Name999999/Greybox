@@ -30,8 +30,7 @@ public class AIFunctionFinalLevel : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            YouLoseCanvas.SetActive(true);
-            GameGUI.SetActive(false);
+            SceneManager.LoadScene("BossCutsceneScene1");
         }
     }
 
