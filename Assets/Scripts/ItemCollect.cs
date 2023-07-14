@@ -7,6 +7,8 @@ public class ItemCollect : MonoBehaviour
     public GameObject invManager; // ref to inventory manager
     public bool canCollect;
     public int itemIndex;
+    public GameObject Text;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,8 @@ public class ItemCollect : MonoBehaviour
             invManager.GetComponent<Inventory>().GetsItem(itemIndex);
             Destroy(gameObject);
             // should set up object destruction here
-  
+            Text.SetActive(false);
+
         }
     }
 
@@ -33,6 +36,7 @@ public class ItemCollect : MonoBehaviour
         {
             canCollect = true;
             Debug.Log("Item can be collected");
+            Text.SetActive(true);
         }
     }
 
@@ -42,6 +46,7 @@ public class ItemCollect : MonoBehaviour
         {
             canCollect= false;
             Debug.Log("Item out of range again");
+            Text.SetActive(false);
         }
     }
 }
