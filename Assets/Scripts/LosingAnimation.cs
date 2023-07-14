@@ -17,7 +17,7 @@ public class LosingAnimation : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             YouLoseScreen.SetActive(true);
 
